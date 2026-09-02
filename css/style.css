@@ -1,0 +1,107 @@
+/* Core Layout Reset */ 
+:root { 
+    --primary: #0070ad; 
+    --dark: #004a73; 
+    --bg: #f4f7f9; 
+    --border: #cfd8dc; 
+    --success: #2e7d32; 
+    --marked: #673ab7; 
+} 
+ 
+* { box-sizing: border-box; } 
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); overflow: hidden; } 
+ 
+/* 1. Header */ 
+.main-header { 
+    height: 60px; background: white; padding: 0 30px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    border-bottom: 3px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    position: fixed; width: 100%; top: 0; z-index: 100; 
+} 
+.brand { font-weight: bold; color: var(--primary); font-size: 1.2rem; } 
+.timer-box { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-family: monospace; font-size: 1.2rem; } 
+ 
+/* 2. Main 3-Column Container */ 
+.test-env-container { 
+    display: grid; 
+    grid-template-columns: 280px 1fr 300px; /* Force 3 columns */ 
+    margin-top: 60px; 
+    height: calc(100vh - 60px); 
+} 
+ 
+/* 3. Left Sidebar (Sections) */ 
+.section-sidebar { 
+    background: white; border-right: 1px solid var(--border); 
+    overflow-y: auto; display: flex; flex-direction: column; 
+} 
+.sidebar-title { padding: 15px; font-weight: bold; background: #eee; border-bottom: 1px solid var(--border); } 
+.section-nav-item { 
+    padding: 15px 20px; border-bottom: 1px solid #f0f0f0; cursor: pointer; 
+    font-size: 0.9rem; position: relative; 
+} 
+.section-nav-item.active { background: #e3f2fd; border-left: 5px solid var(--primary); font-weight: bold; } 
+.section-nav-item.locked { opacity: 0.5; background: #fafafa; cursor: not-allowed; } 
+ 
+/* 4. Middle Area (Questions) */ 
+.question-main { 
+    background: white; padding: 30px; overflow-y: auto; 
+    display: flex; flex-direction: column; border-right: 1px solid var(--border); 
+} 
+.question-block { margin-top: 20px; } 
+.q-text { font-size: 1.2rem; margin-bottom: 25px; line-height: 1.5; font-weight: 500; } 
+ 
+/* Vertical MCQ Options */ 
+.options-container { display: flex; flex-direction: column; gap: 12px; } 
+.option-row { 
+    display: flex; align-items: center; padding: 15px; 
+    border: 1px solid var(--border); border-radius: 6px; cursor: pointer; 
+} 
+.option-row:hover { background: #f0f7ff; border-color: var(--primary); } 
+.option-row.selected { background: #e3f2fd; border: 2px solid var(--primary); } 
+.opt-text { margin-left: 15px; } 
+ 
+/* 5. Right Sidebar (Palette) */ 
+.palette-sidebar { background: white; padding: 20px; overflow-y: auto; } 
+.palette-grid { 
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 15px 0; 
+} 
+.palette-item { 
+    height: 40px; border: 1px solid #ccc; background: white; 
+    display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 4px; 
+} 
+.palette-item.current { border: 2px solid var(--primary); font-weight: bold; } 
+.palette-item.answered { background: var(--success) !important; color: white; border: none; } 
+.palette-item.marked { background: var(--marked) !important; color: white; border: none; } 
+.palette-item.visited { background: #ffa000 !important; color: white; border: none; } 
+ 
+/* Footer Buttons */ 
+.test-footer { 
+    margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; 
+    display: flex; justify-content: space-between; 
+} 
+.primary-btn { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 4px; cursor: pointer; } 
+.outline-btn { background: white; border: 1px solid #888; padding: 10px 20px; border-radius: 4px; cursor: pointer; } 
+.hidden { display: none !important; }
+
+
+/* Instruction Page - Center the Assessment Card */
+body.bg-light {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+body.bg-light main.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+body.bg-light .instruction-card {
+    width: 100%;
+    max-width: 850px;
+}

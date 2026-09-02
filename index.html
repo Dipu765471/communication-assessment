@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Login | Communication Test</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <span class="brand">CORPORATE ASSESSMENT PORTAL</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="instruction-card">
+            <div class="card-header">
+                <h1>Communication Assessment - Set 1</h1>
+                <p class="subtitle">Preparation for Campus Placement / Corporate Evaluation</p>
+            </div>
+
+            <div class="card-body">
+                <section class="test-details">
+                    <div class="detail-item"><strong>Duration:</strong> 60 Minutes</div>
+                    <div class="detail-item"><strong>Total Sections:</strong> 6</div>
+                    <div class="detail-item"><strong>Test Type:</strong> Objective + Subjective + Speaking</div>
+                </section>
+
+                <hr>
+
+                <h3>General Instructions:</h3>
+                <ul class="instruction-list">
+                    <li>This is a timed assessment. The 60-minute timer starts as soon as you click <strong>"Begin Assessment"</strong>.</li>
+                    <li><strong>Do Not Refresh:</strong> While the system is refresh-safe, frequent refreshing may lead to data loss or session expiry.</li>
+                    <li><strong>Navigation:</strong> You can navigate between sections using the sidebar or the 'Next' button.</li>
+                    <li><strong>Auto-Submit:</strong> The test will automatically submit once the timer reaches 00:00.</li>
+                    <li><strong>Speaking Section:</strong> Ensure your Microphone and Camera permissions are enabled when prompted.</li>
+                    <li><strong>Environment:</strong> Take the test in a quiet room with a professional background for video responses.</li>
+                </ul>
+
+                <div class="system-check">
+                    <p>By clicking "Begin", you confirm that your internet connection is stable and you are ready to start.</p>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button id="start-btn" class="btn-primary-lg" onclick="startAssessment()">Begin Assessment</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function startAssessment() {
+            // Clear any previous test sessions
+            localStorage.clear();
+            // Redirect to the test environment
+            window.location.href = 'test.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Report | Communication Test Portal</title>
+    <!-- Linking to the updated style.css for professional corporate UI -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific Result Page tweaks to ensure the card looks centered */
+        .result-wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .status-success { background: #e8f5e9; color: #2e7d32; }
+        .status-pending { background: #fff3e0; color: #ef6c00; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Professional Fixed Header -->
+    <header class="main-header">
+        <div class="brand">DETAILED ASSESSMENT REPORT</div>
+        <div class="test-info">ID: CAMPUS_2025_99 | Set 1</div>
+    </header>
+
+    <main class="result-wrapper">
+        <div class="result-card">
+            <!-- Header Section -->
+            <div class="result-header" style="text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px;">
+                <h1 style="margin: 0; color: var(--primary);">Assessment Completed</h1>
+                <p style="color: #666; margin-top: 10px;">Thank you for participating in the Capgemini-style Communication Assessment.</p>
+            </div>
+
+            <!-- Top Level Statistics (Stat Boxes) -->
+            <div class="score-summary-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;">
+                <div class="stat-box" style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #ddd;">
+                    <h3 style="margin: 0; font-size: 0.85rem; color: #777; text-transform: uppercase;">Objective Score</h3>
+                    <p id="obj-score-val" style="margin: 10px 0 0; font-size: 2rem; font-weight: bold; color: var(--primary);">0 / 0</p>
+                </div>
+                
+                <div class="stat-box" style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #ddd;">
+                    <h3 style="margin: 0; font-size: 0.85rem; color: #777; text-transform: uppercase;">Overall Accuracy</h3>
+                    <p id="accuracy-val" style="margin: 10px 0 0; font-size: 2rem; font-weight: bold; color: var(--primary);">0%</p>
+                </div>
+
+                <div class="stat-box" style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #ddd;">
+                    <h3 style="margin: 0; font-size: 0.85rem; color: #777; text-transform: uppercase;">Hiring Status</h3>
+                    <p id="hiring-status" style="margin: 10px 0 0; font-size: 1.4rem; font-weight: bold; color: #2e7d32;">Qualified</p>
+                </div>
+            </div>
+
+            <!-- Sectional Breakdown Table -->
+            <h3 style="margin-bottom: 20px; color: #333; border-left: 5px solid var(--primary); padding-left: 15px;">Section-wise Performance</h3>
+            <table class="result-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: var(--primary); color: white;">
+                        <th style="padding: 12px; text-align: left;">Section Name</th>
+                        <th style="padding: 12px; text-align: left;">Category</th>
+                        <th style="padding: 12px; text-align: left;">Marks / Tasks</th>
+                        <th style="padding: 12px; text-align: left;">Evaluation</th>
+                    </tr>
+                </thead>
+                <tbody id="result-table-body">
+                    <!-- Data will be injected here by scoring.js -->
+                </tbody>
+            </table>
+
+            <!-- Footer Actions -->
+            <div class="card-footer" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: center; gap: 20px;">
+                <button onclick="window.print()" class="outline-btn" style="padding: 12px 30px; cursor: pointer;">Download PDF Report</button>
+                <button onclick="exitPortal()" class="primary-btn" style="padding: 12px 30px; cursor: pointer;">Exit Assessment Portal</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Essential Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/scoring.js"></script>
+    
+    <script>
+        window.onload = function() {
+            const setId = 'set1';
+            
+            // 1. Run the Evaluation Logic from scoring.js
+            const results = Scoring.evaluate(setId);
+
+            // 2. Update the Objective Score Stat Box
+            document.getElementById('obj-score-val').innerText = `${results.objectiveScore} / ${results.totalObjective}`;
+            
+            // 3. Calculate and Update Accuracy Percentage
+            const accuracy = results.totalObjective > 0 
+                ? Math.round((results.objectiveScore / results.totalObjective) * 100) 
+                : 0;
+            document.getElementById('accuracy-val').innerText = `${accuracy}%`;
+
+            // 4. Populate the Table
+            const tbody = document.getElementById('result-table-body');
+            tbody.innerHTML = ''; // Clear existing
+
+            results.sectionBreakdown.forEach(sec => {
+                // Determine evaluation remark styling
+                const isManual = (sec.type === 'writing' || sec.type === 'speaking');
+                const statusClass = isManual ? 'status-pending' : 'status-success';
+                const statusText = sec.remarks || 'Completed';
+
+                const row = `
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 15px 12px; font-weight: 600;">${sec.title}</td>
+                        <td style="padding: 15px 12px; text-transform: capitalize;">${sec.type}</td>
+                        <td style="padding: 15px 12px;">${sec.score} / ${sec.total}</td>
+                        <td style="padding: 15px 12px;">
+                            <span class="status-badge ${statusClass}">${statusText}</span>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        };
+
+        function exitPortal() {
+            if(confirm("Are you sure you want to exit? Your session data will be cleared.")) {
+                localStorage.clear();
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

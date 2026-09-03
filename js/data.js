@@ -11,103 +11,143 @@ const TEST_DATA = {
         duration: 3600, // 60 minutes in seconds
 
         sections: [
+    {
+        id: "sec_1",
+        title: "Grammar & Sentence Correction",
+        type: "mcq",
+        description: "Select the option that best maintains formal business standards.",
+        questions: [
+            { id: "g1", question: "Which of the following is the most professional way to follow up on a pending task?", options: ["Why haven't you finished the report yet?", "I am waiting for the report, please send it now.", "I am writing to check on the status of the report due yesterday.", "Has the report been done by you or not?"], answer: 2 },
+            { id: "g2", question: "Choose the grammatically correct sentence:", options: ["The manager, along with his team members, are attending the seminar.", "The manager, along with his team members, is attending the seminar.", "The manager, along with his team members, were attending the seminar.", "The manager, along with his team members, have been attending the seminar."], answer: 1 },
+            { id: "g3", question: "Identify the correct conditional form: 'If the server ___ earlier, we would have met the deadline.'", options: ["would have been fixed", "was fixed", "had been fixed", "has been fixed"], answer: 2 },
+            { id: "g4", question: "Choose the correct preposition: 'The committee was appreciative ___ the efforts made by the interns.'", options: ["for", "of", "about", "with"], answer: 1 },
+            { id: "g5", question: "Select the sentence with correct punctuation for a formal document:", options: ["The project is high-priority; therefore, we must allocate more resources.", "The project is high-priority, therefore we must allocate more resources.", "The project is high-priority; therefore we must allocate more resources.", "The project is high-priority therefore, we must allocate more resources."], answer: 0 },
+            { id: "g6", question: "Which word best completes the sentence: 'The CEO's speech was ___ and to the point.'", options: ["Verbose", "Concise", "Protracted", "Redundant"], answer: 1 },
+            { id: "g7", question: "Identify the error: 'Between you and I, the new policy seems quite restrictive.'", options: ["Between", "and I", "seems", "quite restrictive"], answer: 1 }, // Should be 'and me'
+            { id: "g8", question: "Choose the most formal alternative for 'He gave up on the project.'", options: ["He quit the project.", "He abandoned the project.", "He stopped the project.", "He threw away the project."], answer: 1 },
+            { id: "g9", question: "Select the correct spelling used in global business English:", options: ["Liaison", "Liason", "Liaisonne", "Liaisonn"], answer: 0 },
+            { id: "g10", question: "Choose the correct verb form: 'Neither the supervisor nor the engineers ___ aware of the glitch.'", options: ["was", "were", "has been", "is"], answer: 1 }
+        ]
+    },
+    {
+        id: "sec_2",
+        title: "Business Communication Writing",
+        type: "writing",
+        tasks: [
             {
-                id: "sec_1",
-                title: "Grammar & Sentence Correction",
-                type: "mcq",
-                description: "Select the grammatically correct option for professional context.",
-                questions: [
-                    { id: "g1", question: "Choose the correct sentence:", options: ["The team have completed the project.", "The team has completed the project.", "The team is completed the project.", "The team has complete the project."], answer: 1 },
-                    { id: "g2", question: "Select the formal version: 'I can't come to the meeting.'", options: ["I won't make it to the meeting.", "I am unable to attend the scheduled meeting.", "I am not coming for the meeting.", "Meeting is not possible for me."], answer: 1 },
-                    { id: "g3", question: "Which word correctly completes: 'The manager ___ the report before the deadline.'", options: ["submitted", "submits", "had submitted", "has submit"], answer: 2 },
-                    { id: "g4", question: "Find the error: 'Either the supervisor or the employees is responsible.'", options: ["Either", "supervisor", "is", "responsible"], answer: 2 }, // 'are' should be used
-                    { id: "g5", question: "Identify the correct preposition: 'We will discuss this ___ the meeting.'", options: ["on", "at", "in", "by"], answer: 1 },
-                    { id: "g6", question: "Choose the correct formal closing:", options: ["Best,", "Cheers,", "Yours sincerely,", "Thanks!"], answer: 2 },
-                    { id: "g7", question: "Correct the sentence: 'He don't know the password.'", options: ["He doesn't knows", "He don't knows", "He doesn't know", "He didn't knew"], answer: 2 },
-                    { id: "g8", question: "Which is more professional?", options: ["Give me the file.", "Send the file now.", "Could you please share the file?", "I want the file."], answer: 2 },
-                    { id: "g9", question: "The project was delayed ___ unforeseen circumstances.", options: ["because", "due to", "as", "since"], answer: 1 },
-                    { id: "g10", question: "Choose the correctly spelled word:", options: ["Accomodation", "Accommodation", "Acomodation", "Accommodatn"], answer: 1 }
-                ]
+                id: "w1",
+                title: "Task 1: Project Extension Request",
+                scenario: "You are working on a critical module. Due to an unexpected API integration issue, you need two more days. Write an email to your Project Manager, Ms. Anjali, explaining the technical hurdle and proposing a revised timeline.",
+                instructions: "Write a professional email (80-120 words). Include a clear subject line."
             },
             {
-                id: "sec_2",
-                title: "Business Communication Writing",
-                type: "writing",
-                tasks: [
-                    {
-                        id: "w1",
-                        title: "Task 1: Short Email (Requesting Information)",
-                        scenario: "You are a trainee. You need to request the 'Brand Guidelines' document from the Marketing Manager, Mr. Sharma, to complete your task.",
-                        instructions: "Write a short professional email (50-100 words)."
-                    },
-                    {
-                        id: "w2",
-                        title: "Task 2: Long Email (Handling a Complaint)",
-                        scenario: "A client is unhappy because the software demo was delayed by 2 hours. Write an apology email explaining that it was due to a technical server migration and offer a new time.",
-                        instructions: "Write a professional email (150-200 words)."
-                    }
-                ]
-            },
-            {
-                id: "sec_3",
-                title: "Chat / Email Response",
-                type: "mcq",
-                description: "Choose the best response for the given workplace scenario.",
-                questions: [
-                    { id: "c1", question: "Client: 'I need this by EOD, but your team said it's impossible.' Your response:", options: ["They are lazy, I'll do it.", "I understand the urgency; let me check if we can prioritize a partial delivery.", "Rules are rules, we can't.", "Please talk to my manager."], answer: 1 },
-                    { id: "c2", question: "Colleague: 'Can you help me with this task?' (You are busy).", options: ["No, I'm busy.", "I'd love to help, but I'm currently tied up with a deadline. Can we connect in 2 hours?", "Ask someone else.", "Sure, I'll stop my work now."], answer: 1 },
-                    { id: "c3", question: "Which is the best subject line for a leave request?", options: ["Leave", "I am sick", "Leave Application - [Your Name] - [Date]", "Need holiday"], answer: 2 },
-                    { id: "c4", question: "A manager gives you constructive criticism. You say:", options: ["I disagree.", "Thank you for the feedback; I will work on improving these areas.", "It wasn't my fault.", "Okay."], answer: 1 },
-                    { id: "c5", question: "How to start an email to someone you've never met?", options: ["Hey,", "Dear Mr./Ms. [Last Name],", "Yo!", "To whom it may concern,"], answer: 1 },
-                    { id: "c6", question: "Your teammate missed a deadline. How do you address it in a meeting?", options: ["You ruined the project.", "Why are you late?", "Let's discuss the challenges we faced and how to get back on track.", "I will report you."], answer: 2 }
-                ]
-            },
-            {
-                id: "sec_4",
-                title: "Reading Comprehension",
-                type: "reading",
-                passage: "In the modern corporate world, 'Agile Methodology' has shifted from a software development trend to a core business philosophy. It emphasizes iterative progress, team collaboration, and adaptability. Unlike the traditional Waterfall model, where every phase is mapped out at the start, Agile allows teams to respond to changing client needs in real-time. This flexibility reduces the risk of project failure and ensures that the final product remains relevant in a fast-paced market.",
-                questions: [
-                    { id: "r1", question: "What is the main advantage of Agile over Waterfall according to the text?", options: ["It is cheaper.", "It is older.", "It allows for real-time response to change.", "It requires no planning."], answer: 2 },
-                    { id: "r2", question: "The word 'Iterative' most likely means:", options: ["Slow", "Repeating/Cyclical", "Final", "Difficult"], answer: 1 },
-                    { id: "r3", question: "Who is Agile designed to satisfy primarily?", options: ["The CEO", "The Competitors", "The Clients", "The Waterfall model"], answer: 2 },
-                    { id: "r4", question: "Which word in the text means 'the ability to change'?", options: ["Philosophy", "Adaptability", "Traditional", "Relevant"], answer: 1 }
-                ]
-            },
-            {
-                id: "sec_5",
-                title: "Listening Comprehension",
-                type: "listening",
-                audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Note: Replace with actual corporate audio clip
-                description: "Listen to the clip and answer the questions. (Simulated corporate audio)",
-                questions: [
-                    { id: "l1", question: "What was the main topic of the conversation?", options: ["Salary hike", "Budget allocation", "Office renovation", "New hire orientation"], answer: 1 },
-                    { id: "l2", question: "By what percentage did the speaker suggest increasing the marketing spend?", options: ["5%", "10%", "15%", "20%"], answer: 1 },
-                    { id: "l3", question: "What was the deadline mentioned for the proposal?", options: ["Friday", "Monday", "Next month", "Wednesday"], answer: 3 },
-                    { id: "l4", question: "Which department was mentioned as having a conflict?", options: ["HR", "Finance", "IT", "Sales"], answer: 1 }
-                ]
-            },
-            {
-                id: "sec_6",
-                title: "Spoken Communication Simulation",
-                type: "speaking",
-                tasks: [
-                    {
-                        id: "s1",
-                        title: "Task 1: Professional Introduction",
-                        scenario: "Introduce yourself to a panel of interviewers. Focus on your academic background, one key project, and your career goals.",
-                        prepTime: 30,
-                        recordTime: 60
-                    },
-                    {
-                        id: "s2",
-                        title: "Task 2: Conflict Resolution",
-                        scenario: "Explain to your supervisor why your team couldn't meet the deadline due to a technical glitch, and propose a solution.",
-                        prepTime: 45,
-                        recordTime: 90
-                    }
-                ]
+                id: "w2",
+                title: "Task 2: Apology for Scheduling Conflict",
+                scenario: "You missed a high-stakes client call because you were double-booked for an internal training session. Write an email to the client, Mr. David, apologizing for the oversight, summarizing your understanding of the meeting's agenda, and requesting a 15-minute slot to sync up.",
+                instructions: "Write a professional email (150-200 words). Maintain a sincere but confident tone."
             }
         ]
+    },
+    {
+        id: "sec_3",
+        title: "Situational Chat / Email Response",
+        type: "mcq",
+        description: "Select the response that demonstrates the highest level of Emotional Intelligence (EQ).",
+        questions: [
+            { id: "c1", question: "A senior colleague criticizes your presentation style in front of the team. How do you respond?", options: ["Tell them it was unprofessional to do that publicly.", "Ignore the comment and continue with the presentation.", "Thank them for the feedback and offer to discuss specific improvements after the meeting.", "Argue that your style is modern and more effective."], answer: 2 },
+            { id: "c2", question: "A client asks for a feature that is not in the current contract. Your response:", options: ["We can't do that. It's not in the contract.", "That is an interesting suggestion. Let me discuss the feasibility and scope with my technical lead and get back to you.", "Sure, we will do it for free to keep you happy.", "You will have to pay a lot extra for this feature."], answer: 1 },
+            { id: "c3", question: "Your teammate is consistently missing deadlines, affecting your work. You say:", options: ["I am reporting you to the manager if you miss one more.", "Is everything okay? I noticed a delay in the modules; let's see how we can align to meet the project goals.", "I'll do your work for you, just don't tell the boss.", "You are being very irresponsible lately."], answer: 1 },
+            { id: "c4", question: "Which subject line is most appropriate for a technical escalation?", options: ["ISSUE WITH SYSTEM", "Help me fast!!", "Urgent: Production Server Latency - Ticket #9902", "System not working since morning"], answer: 2 },
+            { id: "c5", question: "How do you professionally decline a meeting invite due to a prior commitment?", options: ["I'm busy, can't come.", "I have another meeting, sorry.", "Thank you for the invite. Unfortunately, I have a prior commitment. Could we record the session or sync up later?", "Delete the invite without responding."], answer: 2 },
+            { id: "c6", question: "A customer is shouting on a call about a billing error. You should:", options: ["Shout back to show authority.", "Hang up immediately.", "Acknowledge their frustration, stay calm, and state the steps you are taking to investigate the error.", "Tell them it's not your department."], answer: 2 }
+        ]
+    },
+    {
+        id: "sec_4",
+        title: "Reading Comprehension",
+        type: "reading",
+        passage: "The concept of 'Cognitive Diversity' in the workplace goes beyond demographic differences. It refers to the inclusion of people who have different styles of problem-solving and can offer unique perspectives because they think differently. High-performing teams at Capgemini-like organizations leverage this diversity to avoid 'Groupthink'—a psychological phenomenon where the desire for harmony in a group results in irrational or dysfunctional decision-making. By encouraging dissenting opinions and intellectual friction, companies can foster innovation and better manage complex global projects.",
+        questions: [
+            { id: "r1", question: "According to the passage, what is the primary benefit of 'Cognitive Diversity'?", options: ["It improves office aesthetics.", "It helps avoid dysfunctional decision-making caused by Groupthink.", "It ensures everyone thinks exactly the same way.", "It reduces the number of meetings needed."], answer: 1 },
+            { id: "r2", question: "What does the term 'Groupthink' imply in this context?", options: ["Effective team collaboration", "A tendency to prioritize group harmony over critical evaluation", "Thinking as a group to solve a math problem", "Brainstorming sessions"], answer: 1 },
+            { id: "r3", question: "The author suggests that 'intellectual friction' is:", options: ["A sign of a failing team", "Something to be avoided at all costs", "A catalyst for innovation", "A result of poor management"], answer: 2 },
+            { id: "r4", question: "Which word in the text is a synonym for 'disagreeing'?", options: ["Dissenting", "Leverage", "Harmony", "Inclusion"], answer: 0 }
+        ]
+    },
+    {
+        id: "sec_5",
+        title: "Listening Comprehension",
+        type: "listening",
+        audioUrl: "assets/audio/listening-set1.mp3", 
+        description: "Analyze the audio clip for specific project details and stakeholder concerns.",
+        questions: [
+    {
+        id: "l1",
+        question: "What is one major advantage of remote work mentioned in the passage?",
+        options: [
+            "Higher salaries",
+            "Saving commuting time",
+            "More holidays",
+            "Less responsibility"
+        ],
+        answer: 1
+    },
+    {
+        id: "l2",
+        question: "Which skill is important for successful remote work?",
+        options: [
+            "Cooking",
+            "Driving",
+            "Time management",
+            "Physical strength"
+        ],
+        answer: 2
+    },
+    {
+        id: "l3",
+        question: "What problem may employees face while working remotely?",
+        options: [
+            "Finding transportation",
+            "Separating professional and personal life",
+            "Getting a promotion",
+            "Learning to use computers"
+        ],
+        answer: 1
+    },
+    {
+        id: "l4",
+        question: "According to the passage, successful remote work depends on:",
+        options: [
+            "Technology alone",
+            "Working longer hours",
+            "Discipline, communication, and time management",
+            "Having a large office"
+        ],
+        answer: 2
+    }
+]
+    },
+    {
+        id: "sec_6",
+        title: "Spoken Communication Simulation",
+        type: "speaking",
+        tasks: [
+            {
+                id: "s1",
+                title: "Task 1: Elevator Pitch for a Solution",
+                scenario: "You have identified a way to automate a repetitive data-entry task that saves the team 5 hours a week. Present your idea to your Team Lead in 60 seconds.",
+                prepTime: 30,
+                recordTime: 60
+            },
+            {
+                id: "s2",
+                title: "Task 2: Delivering Unfavorable News",
+                scenario: "A software release has been postponed by one week due to a critical security patch requirement. Explain this to the client (Mr. David) over a recorded video message, ensuring you maintain trust.",
+                prepTime: 45,
+                recordTime: 90
+            }
+        ]
+    }
+]
     }
 };

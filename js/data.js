@@ -17,36 +17,158 @@ const TEST_DATA = {
         type: "mcq",
         description: "Select the option that best maintains formal business standards.",
         questions: [
-            { id: "g1", question: "Which of the following is the most professional way to follow up on a pending task?", options: ["Why haven't you finished the report yet?", "I am waiting for the report, please send it now.", "I am writing to check on the status of the report due yesterday.", "Has the report been done by you or not?"], answer: 2 },
-            { id: "g2", question: "Choose the grammatically correct sentence:", options: ["The manager, along with his team members, are attending the seminar.", "The manager, along with his team members, is attending the seminar.", "The manager, along with his team members, were attending the seminar.", "The manager, along with his team members, have been attending the seminar."], answer: 1 },
-            { id: "g3", question: "Identify the correct conditional form: 'If the server ___ earlier, we would have met the deadline.'", options: ["would have been fixed", "was fixed", "had been fixed", "has been fixed"], answer: 2 },
-            { id: "g4", question: "Choose the correct preposition: 'The committee was appreciative ___ the efforts made by the interns.'", options: ["for", "of", "about", "with"], answer: 1 },
-            { id: "g5", question: "Select the sentence with correct punctuation for a formal document:", options: ["The project is high-priority; therefore, we must allocate more resources.", "The project is high-priority, therefore we must allocate more resources.", "The project is high-priority; therefore we must allocate more resources.", "The project is high-priority therefore, we must allocate more resources."], answer: 0 },
-            { id: "g6", question: "Which word best completes the sentence: 'The CEO's speech was ___ and to the point.'", options: ["Verbose", "Concise", "Protracted", "Redundant"], answer: 1 },
-            { id: "g7", question: "Identify the error: 'Between you and I, the new policy seems quite restrictive.'", options: ["Between", "and I", "seems", "quite restrictive"], answer: 1 }, // Should be 'and me'
-            { id: "g8", question: "Choose the most formal alternative for 'He gave up on the project.'", options: ["He quit the project.", "He abandoned the project.", "He stopped the project.", "He threw away the project."], answer: 1 },
-            { id: "g9", question: "Select the correct spelling used in global business English:", options: ["Liaison", "Liason", "Liaisonne", "Liaisonn"], answer: 0 },
-            { id: "g10", question: "Choose the correct verb form: 'Neither the supervisor nor the engineers ___ aware of the glitch.'", options: ["was", "were", "has been", "is"], answer: 1 }
-        ]
+    {
+        id: "g1",
+        question: "You need to follow up with a team member about a pending task. Which sentence is most appropriate in a professional workplace?",
+        options: [
+            "Why have you still not completed the task?",
+            "Please finish the task immediately.",
+            "I am writing to follow up on the status of the task assigned to you.",
+            "You haven't done the task yet, right?"
+        ],
+        answer: 2
+    },
+
+    {
+        id: "g2",
+        question: "Choose the grammatically correct sentence:",
+        options: [
+            "The development team are working on the client requirements.",
+            "The development team is working on the client requirements.",
+            "The development team were working on the client requirements.",
+            "The development team have working on the client requirements."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "g3",
+        question: "Complete the sentence correctly: 'If the team ___ the issue earlier, the application would not have failed.'",
+        options: [
+            "identified",
+            "has identified",
+            "had identified",
+            "would identify"
+        ],
+        answer: 2
+    },
+
+    {
+        id: "g4",
+        question: "Choose the correct preposition: 'The client was satisfied ___ the solution provided by our team.'",
+        options: [
+            "at",
+            "with",
+            "for",
+            "on"
+        ],
+        answer: 1
+    },
+
+    {
+        id: "g5",
+        question: "Choose the sentence with correct punctuation:",
+        options: [
+            "The deadline is approaching; therefore, we need to complete the testing soon.",
+            "The deadline is approaching, therefore we need to complete the testing soon.",
+            "The deadline is approaching therefore, we need to complete the testing soon.",
+            "The deadline is approaching; therefore we need, to complete the testing soon."
+        ],
+        answer: 0
+    },
+
+    {
+        id: "g6",
+        question: "Choose the word that best completes the sentence: 'The project manager gave a ___ explanation of the project requirements.'",
+        options: [
+            "concise",
+            "redundant",
+            "verbose",
+            "ambiguous"
+        ],
+        answer: 0
+    },
+
+    {
+        id: "g7",
+        question: "Identify the error in the sentence: 'The manager discussed the issue between you and I.'",
+        options: [
+            "The manager",
+            "discussed",
+            "between you and I",
+            "the issue"
+        ],
+        answer: 2
+    },
+
+    {
+        id: "g8",
+        question: "Choose the most professional alternative for: 'We need to fix this problem quickly.'",
+        options: [
+            "We need to sort this mess out quickly.",
+            "We should address this issue promptly.",
+            "We have to deal with this somehow.",
+            "We must get rid of this problem."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "g9",
+        question: "Choose the correctly spelled word commonly used in corporate communication:",
+        options: [
+            "Accomodation",
+            "Acommodation",
+            "Accommodation",
+            "Accommadation"
+        ],
+        answer: 2
+    },
+
+    {
+        id: "g10",
+        question: "Complete the sentence correctly: 'Neither the project manager nor the developers ___ available for the meeting.'",
+        options: [
+            "was",
+            "is",
+            "were",
+            "has been"
+        ],
+        answer: 2
+    }
+]
     },
     {
         id: "sec_2",
         title: "Business Communication Writing",
         type: "writing",
         tasks: [
-            {
-                id: "w1",
-                title: "Task 1: Project Extension Request",
-                scenario: "You are working on a critical module. Due to an unexpected API integration issue, you need two more days. Write an email to your Project Manager, Ms. Anjali, explaining the technical hurdle and proposing a revised timeline.",
-                instructions: "Write a professional email (80-120 words). Include a clear subject line."
-            },
-            {
-                id: "w2",
-                title: "Task 2: Apology for Scheduling Conflict",
-                scenario: "You missed a high-stakes client call because you were double-booked for an internal training session. Write an email to the client, Mr. David, apologizing for the oversight, summarizing your understanding of the meeting's agenda, and requesting a 15-minute slot to sync up.",
-                instructions: "Write a professional email (150-200 words). Maintain a sincere but confident tone."
-            }
+    {
+        id: "w1",
+        title: "Task 1: Project Delay",
+        scenario: "You are working on a software project and an unexpected technical issue has delayed your assigned task. Write an email to your Project Manager requesting a short extension.",
+        instructions: "Write a professional email (80-120 words). Include a clear subject line.",
+        points: [
+            "Mention the technical issue causing the delay.",
+            "Explain briefly how it has affected the task.",
+            "Request an extension of two days.",
+            "Mention the revised completion date."
         ]
+    },
+
+    {
+        id: "w2",
+        title: "Task 2: Missed Client Meeting",
+        scenario: "You missed an important client meeting because it overlapped with an internal training session. Write an email to the client apologizing for missing the meeting and requesting a follow-up discussion.",
+        instructions: "Write a professional email (150-200 words). Include a clear subject line.",
+        points: [
+            "Apologize for missing the meeting.",
+            "Briefly explain the scheduling conflict.",
+            "Mention your understanding of the main discussion points.",
+            "Request a suitable 15-minute slot for a follow-up call."
+        ]
+    }
+]
     },
     {
         id: "sec_3",
@@ -54,74 +176,183 @@ const TEST_DATA = {
         type: "mcq",
         description: "Select the response that demonstrates the highest level of Emotional Intelligence (EQ).",
         questions: [
-            { id: "c1", question: "A senior colleague criticizes your presentation style in front of the team. How do you respond?", options: ["Tell them it was unprofessional to do that publicly.", "Ignore the comment and continue with the presentation.", "Thank them for the feedback and offer to discuss specific improvements after the meeting.", "Argue that your style is modern and more effective."], answer: 2 },
-            { id: "c2", question: "A client asks for a feature that is not in the current contract. Your response:", options: ["We can't do that. It's not in the contract.", "That is an interesting suggestion. Let me discuss the feasibility and scope with my technical lead and get back to you.", "Sure, we will do it for free to keep you happy.", "You will have to pay a lot extra for this feature."], answer: 1 },
-            { id: "c3", question: "Your teammate is consistently missing deadlines, affecting your work. You say:", options: ["I am reporting you to the manager if you miss one more.", "Is everything okay? I noticed a delay in the modules; let's see how we can align to meet the project goals.", "I'll do your work for you, just don't tell the boss.", "You are being very irresponsible lately."], answer: 1 },
-            { id: "c4", question: "Which subject line is most appropriate for a technical escalation?", options: ["ISSUE WITH SYSTEM", "Help me fast!!", "Urgent: Production Server Latency - Ticket #9902", "System not working since morning"], answer: 2 },
-            { id: "c5", question: "How do you professionally decline a meeting invite due to a prior commitment?", options: ["I'm busy, can't come.", "I have another meeting, sorry.", "Thank you for the invite. Unfortunately, I have a prior commitment. Could we record the session or sync up later?", "Delete the invite without responding."], answer: 2 },
-            { id: "c6", question: "A customer is shouting on a call about a billing error. You should:", options: ["Shout back to show authority.", "Hang up immediately.", "Acknowledge their frustration, stay calm, and state the steps you are taking to investigate the error.", "Tell them it's not your department."], answer: 2 }
-        ]
+    {
+        id: "c1",
+        question: "During a team meeting, your manager points out a mistake in your work. What would be the most appropriate response?",
+        options: [
+            "Acknowledge the observation and explain the reason for the mistake so the team has the complete context.",
+            "Thank the manager for pointing it out and ask what changes would help avoid a similar issue.",
+            "Accept the feedback and suggest discussing the correction separately so the meeting can continue.",
+            "Agree with the feedback and mention that you will review the issue once the meeting is over."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "c2",
+        question: "A client requests a feature that was not included in the agreed project scope. How should you handle the request?",
+        options: [
+            "Let the client know that the feature is outside the current scope and discuss whether it can be considered separately.",
+            "Acknowledge the requirement, check its technical and project impact internally, and then update the client on the available options.",
+            "Tell the client that the requirement can be considered after confirming the additional effort involved.",
+            "Inform the client that the team will first review the requirement before confirming whether it can be included."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "c3",
+        question: "A teammate's delayed work is beginning to affect your own deadline. What would be the best approach?",
+        options: [
+            "Discuss the delay with the teammate and understand whether there is any issue preventing completion.",
+            "Inform the teammate about the impact on your work and agree on a revised timeline for the pending task.",
+            "Raise the concern with the teammate first and, if the delay continues, discuss the impact with the project manager.",
+            "Ask the teammate about the delay, explain the dependency, and offer help if required to keep the work on schedule."
+        ],
+        answer: 2
+    },
+
+    {
+        id: "c4",
+        question: "You need to report a critical issue affecting a production application. Which subject line would be most effective?",
+        options: [
+            "Urgent: Production Application Issue – Login Failure",
+            "Production Application – Login Failure Requiring Attention",
+            "Critical Production Issue – Application Login Failure",
+            "Application Login Failure – Production Environment"
+        ],
+        answer: 2
+    },
+
+    {
+        id: "c5",
+        question: "You receive a meeting invitation that conflicts with an important task already scheduled. What would be the most professional response?",
+        options: [
+            "Thank the organizer and explain that you have a prior commitment, then ask whether the discussion can be moved or shared afterward.",
+            "Inform the organizer about the conflict and ask if another team member can represent you in the meeting.",
+            "Let the organizer know that you may not be able to attend because of another commitment and ask for the meeting details afterward.",
+            "Decline the invitation with a brief explanation and request the meeting notes so you can remain informed."
+        ],
+        answer: 0
+    },
+
+    {
+        id: "c6",
+        question: "A client is upset because an issue has taken longer than expected to resolve. What should you do?",
+        options: [
+            "Acknowledge the concern, explain the current status, and provide the next expected update.",
+            "Apologize for the delay, explain that the technical team is investigating, and assure the client that the issue is being handled.",
+            "Recognize the client's concern, avoid assigning blame, and explain the actions currently being taken to resolve the issue.",
+            "Apologize for the inconvenience and provide the client with the technical team's latest findings and expected resolution."
+        ],
+        answer: 2
+    }
+]
     },
     {
         id: "sec_4",
         title: "Reading Comprehension",
         type: "reading",
-        passage: "The concept of 'Cognitive Diversity' in the workplace goes beyond demographic differences. It refers to the inclusion of people who have different styles of problem-solving and can offer unique perspectives because they think differently. High-performing teams at Capgemini-like organizations leverage this diversity to avoid 'Groupthink'—a psychological phenomenon where the desire for harmony in a group results in irrational or dysfunctional decision-making. By encouraging dissenting opinions and intellectual friction, companies can foster innovation and better manage complex global projects.",
-        questions: [
-            { id: "r1", question: "According to the passage, what is the primary benefit of 'Cognitive Diversity'?", options: ["It improves office aesthetics.", "It helps avoid dysfunctional decision-making caused by Groupthink.", "It ensures everyone thinks exactly the same way.", "It reduces the number of meetings needed."], answer: 1 },
-            { id: "r2", question: "What does the term 'Groupthink' imply in this context?", options: ["Effective team collaboration", "A tendency to prioritize group harmony over critical evaluation", "Thinking as a group to solve a math problem", "Brainstorming sessions"], answer: 1 },
-            { id: "r3", question: "The author suggests that 'intellectual friction' is:", options: ["A sign of a failing team", "Something to be avoided at all costs", "A catalyst for innovation", "A result of poor management"], answer: 2 },
-            { id: "r4", question: "Which word in the text is a synonym for 'disagreeing'?", options: ["Dissenting", "Leverage", "Harmony", "Inclusion"], answer: 0 }
-        ]
+        passage: "In modern technology organizations, adaptability has become an important skill as tools, processes, and customer expectations continue to change. Employees are often required to learn new technologies while maintaining productivity in their existing roles. However, adaptability does not simply mean accepting every change without question. Effective professionals evaluate how a new approach may affect their work, identify the skills they need to develop, and seek guidance when necessary. Organizations can support this process by providing learning opportunities and encouraging employees to experiment with new methods. In this way, adaptability becomes a continuous process of learning and improvement rather than a one-time response to organizational change.",
+
+questions: [
+    {
+        id: "r5",
+        question: "What does the passage primarily suggest about adaptability?",
+        options: [
+            "It requires employees to accept organizational changes without questioning existing methods.",
+            "It is mainly the ability to learn new technologies while maintaining current productivity.",
+            "It involves continuously learning, evaluating changes, and improving one's approach to work.",
+            "It is a skill that becomes necessary only when an organization introduces new technology."
+        ],
+        answer: 2
+    },
+
+    {
+        id: "r6",
+        question: "According to the passage, what should an employee do when a new approach is introduced?",
+        options: [
+            "Adopt the approach immediately so that productivity is not affected.",
+            "Evaluate its impact and identify any skills required to use it effectively.",
+            "Wait for the organization to provide complete training before considering the approach.",
+            "Continue using the existing method unless the new approach becomes mandatory."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "r7",
+        question: "Which of the following can be inferred about organizations that encourage experimentation?",
+        options: [
+            "They expect employees to learn new methods without formal guidance.",
+            "They may help employees become more comfortable with continuous learning and change.",
+            "They consider experimentation more important than maintaining productivity.",
+            "They reduce the need for employees to develop new technical skills."
+        ],
+        answer: 1
+    },
+
+    {
+        id: "r8",
+        question: "The phrase 'a one-time response to organizational change' implies that adaptability:",
+        options: [
+            "should be treated as an ongoing process rather than something used only during major changes.",
+            "is mainly required when employees are moved to a different role within an organization.",
+            "can be achieved once an employee learns the technology introduced by the organization.",
+            "is most effective when employees respond quickly to every organizational decision."
+        ],
+        answer: 0
+    }
+]
     },
     {
         id: "sec_5",
         title: "Listening Comprehension",
         type: "listening",
-        audioUrl: "https://drive.google.com/file/d/1Q5UBeELmZekqw_Y_KP9tSAojmWqrBmt-", 
+        audioUrl: "https://drive.google.com/file/d/1KzdrsVt_JrJ8oapVGFVMcDJ2ejtchTVn/view?usp=sharing", 
         description: "Analyze the audio clip for specific project details and stakeholder concerns.",
         questions: [
     {
         id: "l1",
-        question: "What is one major advantage of remote work mentioned in the passage?",
+        question: "According to the passage, what is important in addition to individual technical skills?",
         options: [
-            "Higher salaries",
-            "Saving commuting time",
-            "More holidays",
-            "Less responsibility"
+            "Working independently without consulting others",
+            "Communicating clearly and respecting different viewpoints",
+            "Avoiding disagreements within the team",
+            "Completing tasks without informing other team members"
         ],
         answer: 1
     },
     {
         id: "l2",
-        question: "Which skill is important for successful remote work?",
+        question: "What does the passage suggest about disagreements in a project team?",
         options: [
-            "Cooking",
-            "Driving",
-            "Time management",
-            "Physical strength"
+            "They should always be avoided to maintain teamwork.",
+            "They indicate that team members lack technical skills.",
+            "They can help identify risks and lead to better solutions when handled professionally.",
+            "They usually prevent teams from reaching their common goals."
         ],
         answer: 2
     },
     {
         id: "l3",
-        question: "What problem may employees face while working remotely?",
+        question: "What should an employee do when facing difficulties with a task?",
         options: [
-            "Finding transportation",
-            "Separating professional and personal life",
-            "Getting a promotion",
-            "Learning to use computers"
+            "Try to solve the issue without informing the team.",
+            "Wait until the project deadline before discussing the problem.",
+            "Inform the relevant team members about the difficulty.",
+            "Transfer the responsibility to another team member."
         ],
-        answer: 1
+        answer: 2
     },
     {
         id: "l4",
-        question: "According to the passage, successful remote work depends on:",
+        question: "Which statement best describes a strong team according to the passage?",
         options: [
-            "Technology alone",
-            "Working longer hours",
-            "Discipline, communication, and time management",
-            "Having a large office"
+            "A team where members generally agree with each other's decisions.",
+            "A team where members focus mainly on their individual responsibilities.",
+            "A team where members openly discuss problems, learn from one another, and work toward a common goal.",
+            "A team where disagreements are resolved by the most experienced member."
         ],
         answer: 2
     }
@@ -132,21 +363,22 @@ const TEST_DATA = {
         title: "Spoken Communication Simulation",
         type: "speaking",
         tasks: [
-            {
-                id: "s1",
-                title: "Task 1: Elevator Pitch for a Solution",
-                scenario: "You have identified a way to automate a repetitive data-entry task that saves the team 5 hours a week. Present your idea to your Team Lead in 60 seconds.",
-                prepTime: 30,
-                recordTime: 60
-            },
-            {
-                id: "s2",
-                title: "Task 2: Delivering Unfavorable News",
-                scenario: "A software release has been postponed by one week due to a critical security patch requirement. Explain this to the client (Mr. David) over a recorded video message, ensuring you maintain trust.",
-                prepTime: 45,
-                recordTime: 90
-            }
-        ]
+    {
+        id: "s1",
+        title: "Task 1: Suggesting a Process Improvement",
+        scenario: "You noticed that your team spends considerable time manually entering data into a system. You have an idea to automate part of the process and believe it could save several hours each week. Present your idea to your Team Lead in a clear and convincing way.",
+        prepTime: 30,
+        recordTime: 60
+    },
+
+    {
+        id: "s2",
+        title: "Task 2: Communicating a Project Delay",
+        scenario: "A software release has been delayed by one week because the testing team identified a critical security issue that must be fixed before deployment. Explain the situation to the client in a recorded video message. Be honest about the delay while maintaining the client's confidence in the team.",
+        prepTime: 45,
+        recordTime: 90
+    }
+]
     }
 ]
     }

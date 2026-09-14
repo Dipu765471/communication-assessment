@@ -146,7 +146,7 @@ const TEST_DATA = {
     {
         id: "w1",
         title: "Task 1: Project Delay",
-        scenario: "You are working on a software project and an unexpected technical issue has delayed your assigned task. Write an email to your Project Manager requesting a short extension.",
+        scenario: "You are working on a software project and an unexpected technical issue has delayed your assigned task. Write an email to your Project Manager requesting a short extension. Points: 1. Mention the technical issue causing the delay. 2: Explain briefly how it has affected the task. 3: Request an extension of two days. 4: Mention the revised completion date. Write a professional email (40-60 words). Include a clear subject line.",
         instructions: "Write a professional email (80-120 words). Include a clear subject line.",
         points: [
             "Mention the technical issue causing the delay.",
@@ -159,7 +159,7 @@ const TEST_DATA = {
     {
         id: "w2",
         title: "Task 2: Missed Client Meeting",
-        scenario: "You missed an important client meeting because it overlapped with an internal training session. Write an email to the client apologizing for missing the meeting and requesting a follow-up discussion.",
+        scenario: "You missed an important client meeting because it overlapped with an internal training session. Write an email to the client apologizing for missing the meeting and requesting a follow-up discussion. Points: 1. Apologize for missing the meeting. 2. Briefly explain the scheduling conflict. 3. Mention your understanding of the main discussion points. 4. Request a suitable 15-minute slot for a follow-up call. Write a professional email (120-160 words). Include a clear subject line.",
         instructions: "Write a professional email (150-200 words). Include a clear subject line.",
         points: [
             "Apologize for missing the meeting.",
